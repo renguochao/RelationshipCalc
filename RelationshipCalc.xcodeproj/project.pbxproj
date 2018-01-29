@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A48AA30FAC65C6349842FF54 /* libPods-RelationshipCalc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DFE5B8C3AB32EDB786F3C3 /* libPods-RelationshipCalc.a */; };
 		D9802EC5201EED6C000EC5C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9802EC4201EED6C000EC5C9 /* AppDelegate.m */; };
 		D9802EC8201EED6C000EC5C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9802EC7201EED6C000EC5C9 /* ViewController.m */; };
 		D9802ECB201EED6C000EC5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9802EC9201EED6C000EC5C9 /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20DFE5B8C3AB32EDB786F3C3 /* libPods-RelationshipCalc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RelationshipCalc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		440C1417C089A4F42A4464B9 /* Pods-RelationshipCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelationshipCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelationshipCalc/Pods-RelationshipCalc.debug.xcconfig"; sourceTree = "<group>"; };
+		D91AD8D7DFE1CDB7947CAF84 /* Pods-RelationshipCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelationshipCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-RelationshipCalc/Pods-RelationshipCalc.release.xcconfig"; sourceTree = "<group>"; };
 		D9802EC0201EED6C000EC5C9 /* RelationshipCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelationshipCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9802EC3201EED6C000EC5C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D9802EC4201EED6C000EC5C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48AA30FAC65C6349842FF54 /* libPods-RelationshipCalc.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C17C2FF6B8802C93F95B3F00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				440C1417C089A4F42A4464B9 /* Pods-RelationshipCalc.debug.xcconfig */,
+				D91AD8D7DFE1CDB7947CAF84 /* Pods-RelationshipCalc.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D9802EB7201EED6C000EC5C9 = {
 			isa = PBXGroup;
 			children = (
 				D9802EC2201EED6C000EC5C9 /* RelationshipCalc */,
 				D9802EC1201EED6C000EC5C9 /* Products */,
+				C17C2FF6B8802C93F95B3F00 /* Pods */,
+				F76FA037796F205F4237F625 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +87,14 @@
 			path = RelationshipCalc;
 			sourceTree = "<group>";
 		};
+		F76FA037796F205F4237F625 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20DFE5B8C3AB32EDB786F3C3 /* libPods-RelationshipCalc.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9802ED6201EED6C000EC5C9 /* Build configuration list for PBXNativeTarget "RelationshipCalc" */;
 			buildPhases = (
+				C47E5C6B7280B3786839773C /* [CP] Check Pods Manifest.lock */,
 				D9802EBC201EED6C000EC5C9 /* Sources */,
 				D9802EBD201EED6C000EC5C9 /* Frameworks */,
 				D9802EBE201EED6C000EC5C9 /* Resources */,
+				38914EFC375175916D08AB80 /* [CP] Embed Pods Frameworks */,
+				0CC286DA6BD54281BF4887E2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CC286DA6BD54281BF4887E2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RelationshipCalc/Pods-RelationshipCalc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38914EFC375175916D08AB80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RelationshipCalc/Pods-RelationshipCalc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C47E5C6B7280B3786839773C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D9802EBC201EED6C000EC5C9 /* Sources */ = {
@@ -276,6 +351,7 @@
 		};
 		D9802ED7201EED6C000EC5C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 440C1417C089A4F42A4464B9 /* Pods-RelationshipCalc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -290,6 +366,7 @@
 		};
 		D9802ED8201EED6C000EC5C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D91AD8D7DFE1CDB7947CAF84 /* Pods-RelationshipCalc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
