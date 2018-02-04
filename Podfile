@@ -6,5 +6,5 @@ target 'RelationshipCalc' do
   # use_frameworks!
 
   # Pods for RelationshipCalc
-
+  pod 'Masonry', '~> 1.1.0'
 end
