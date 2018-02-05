@@ -16,7 +16,18 @@
 		D9F41188202734A30064A6F2 /* RCRelationViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F41187202734A30064A6F2 /* RCRelationViewModel.m */; };
 		D9F4118B202734F60064A6F2 /* filter.json in Resources */ = {isa = PBXBuildFile; fileRef = D9F41189202734F60064A6F2 /* filter.json */; };
 		D9F4118C202734F60064A6F2 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D9F4118A202734F60064A6F2 /* data.json */; };
+		D9F4119D202744470064A6F2 /* RCRelationViewModelTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F4119C202744470064A6F2 /* RCRelationViewModelTestCase.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D9F41197202744350064A6F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9802EB8201EED6C000EC5C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9802EBF201EED6C000EC5C9;
+			remoteInfo = RelationshipCalc;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		20DFE5B8C3AB32EDB786F3C3 /* libPods-RelationshipCalc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RelationshipCalc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +46,9 @@
 		D9F41187202734A30064A6F2 /* RCRelationViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCRelationViewModel.m; sourceTree = "<group>"; };
 		D9F41189202734F60064A6F2 /* filter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = filter.json; sourceTree = "<group>"; };
 		D9F4118A202734F60064A6F2 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		D9F41192202744350064A6F2 /* RelationshipCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelationshipCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F41196202744350064A6F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9F4119C202744470064A6F2 /* RCRelationViewModelTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCRelationViewModelTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +57,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A48AA30FAC65C6349842FF54 /* libPods-RelationshipCalc.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9F4118F202744350064A6F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				D9802EC2201EED6C000EC5C9 /* RelationshipCalc */,
+				D9F41193202744350064A6F2 /* RelationshipCalcTests */,
 				D9802EC1201EED6C000EC5C9 /* Products */,
 				C17C2FF6B8802C93F95B3F00 /* Pods */,
 				F76FA037796F205F4237F625 /* Frameworks */,
@@ -72,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				D9802EC0201EED6C000EC5C9 /* RelationshipCalc.app */,
+				D9F41192202744350064A6F2 /* RelationshipCalcTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +108,7 @@
 				D9802EC7201EED6C000EC5C9 /* ViewController.m */,
 				D9F41186202734A30064A6F2 /* RCRelationViewModel.h */,
 				D9F41187202734A30064A6F2 /* RCRelationViewModel.m */,
+				D9802ED1201EED6C000EC5C9 /* Info.plist */,
 				D9F4118D202735040064A6F2 /* Resources */,
 			);
 			path = RelationshipCalc;
@@ -97,10 +121,18 @@
 				D9F41189202734F60064A6F2 /* filter.json */,
 				D9802ECC201EED6C000EC5C9 /* Assets.xcassets */,
 				D9802ECE201EED6C000EC5C9 /* LaunchScreen.storyboard */,
-				D9802ED1201EED6C000EC5C9 /* Info.plist */,
 				D9802ED2201EED6C000EC5C9 /* main.m */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D9F41193202744350064A6F2 /* RelationshipCalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				D9F41196202744350064A6F2 /* Info.plist */,
+				D9F4119C202744470064A6F2 /* RCRelationViewModelTestCase.m */,
+			);
+			path = RelationshipCalcTests;
 			sourceTree = "<group>";
 		};
 		F76FA037796F205F4237F625 /* Frameworks */ = {
@@ -134,6 +166,24 @@
 			productReference = D9802EC0201EED6C000EC5C9 /* RelationshipCalc.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D9F41191202744350064A6F2 /* RelationshipCalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9F41199202744350064A6F2 /* Build configuration list for PBXNativeTarget "RelationshipCalcTests" */;
+			buildPhases = (
+				D9F4118E202744350064A6F2 /* Sources */,
+				D9F4118F202744350064A6F2 /* Frameworks */,
+				D9F41190202744350064A6F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9F41198202744350064A6F2 /* PBXTargetDependency */,
+			);
+			name = RelationshipCalcTests;
+			productName = RelationshipCalcTests;
+			productReference = D9F41192202744350064A6F2 /* RelationshipCalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -146,6 +196,11 @@
 					D9802EBF201EED6C000EC5C9 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					D9F41191202744350064A6F2 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D9802EBF201EED6C000EC5C9;
 					};
 				};
 			};
@@ -163,6 +218,7 @@
 			projectRoot = "";
 			targets = (
 				D9802EBF201EED6C000EC5C9 /* RelationshipCalc */,
+				D9F41191202744350064A6F2 /* RelationshipCalcTests */,
 			);
 		};
 /* End PBXProject section */
@@ -176,6 +232,13 @@
 				D9F4118B202734F60064A6F2 /* filter.json in Resources */,
 				D9802ECD201EED6C000EC5C9 /* Assets.xcassets in Resources */,
 				D9F4118C202734F60064A6F2 /* data.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9F41190202744350064A6F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +304,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D9F4118E202744350064A6F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F4119D202744470064A6F2 /* RCRelationViewModelTestCase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D9F41198202744350064A6F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9802EBF201EED6C000EC5C9 /* RelationshipCalc */;
+			targetProxy = D9F41197202744350064A6F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D9802ECE201EED6C000EC5C9 /* LaunchScreen.storyboard */ = {
@@ -389,6 +468,36 @@
 			};
 			name = Release;
 		};
+		D9F4119A202744350064A6F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5S86SE89PY;
+				INFOPLIST_FILE = RelationshipCalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.kuaisave.RelationshipCalcTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RelationshipCalc.app/RelationshipCalc";
+			};
+			name = Debug;
+		};
+		D9F4119B202744350064A6F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5S86SE89PY;
+				INFOPLIST_FILE = RelationshipCalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.kuaisave.RelationshipCalcTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RelationshipCalc.app/RelationshipCalc";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -406,6 +515,15 @@
 			buildConfigurations = (
 				D9802ED7201EED6C000EC5C9 /* Debug */,
 				D9802ED8201EED6C000EC5C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9F41199202744350064A6F2 /* Build configuration list for PBXNativeTarget "RelationshipCalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9F4119A202744350064A6F2 /* Debug */,
+				D9F4119B202744350064A6F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
