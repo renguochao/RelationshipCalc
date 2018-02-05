@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18BB1AA5202850BA00BB1758 /* HTRelationKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB1AA4202850BA00BB1758 /* HTRelationKeyBoard.m */; };
+		18BB1AA8202850C000BB1758 /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB1AA7202850C000BB1758 /* UIView+Borders.m */; };
+		18BB1AAB2028530D00BB1758 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB1AAA2028530D00BB1758 /* UIView+Extension.m */; };
+		18BB1AAE2028538100BB1758 /* HTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB1AAC2028538100BB1758 /* HTColor.m */; };
 		A48AA30FAC65C6349842FF54 /* libPods-RelationshipCalc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DFE5B8C3AB32EDB786F3C3 /* libPods-RelationshipCalc.a */; };
 		D9802EC5201EED6C000EC5C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9802EC4201EED6C000EC5C9 /* AppDelegate.m */; };
 		D9802EC8201EED6C000EC5C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9802EC7201EED6C000EC5C9 /* ViewController.m */; };
@@ -30,6 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18BB1AA3202850BA00BB1758 /* HTRelationKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTRelationKeyBoard.h; sourceTree = "<group>"; };
+		18BB1AA4202850BA00BB1758 /* HTRelationKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTRelationKeyBoard.m; sourceTree = "<group>"; };
+		18BB1AA6202850C000BB1758 /* UIView+Borders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Borders.h"; sourceTree = "<group>"; };
+		18BB1AA7202850C000BB1758 /* UIView+Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Borders.m"; sourceTree = "<group>"; };
+		18BB1AA92028530D00BB1758 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		18BB1AAA2028530D00BB1758 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		18BB1AAC2028538100BB1758 /* HTColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTColor.m; sourceTree = "<group>"; };
+		18BB1AAD2028538100BB1758 /* HTColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTColor.h; sourceTree = "<group>"; };
 		20DFE5B8C3AB32EDB786F3C3 /* libPods-RelationshipCalc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RelationshipCalc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		440C1417C089A4F42A4464B9 /* Pods-RelationshipCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelationshipCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelationshipCalc/Pods-RelationshipCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		D91AD8D7DFE1CDB7947CAF84 /* Pods-RelationshipCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelationshipCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-RelationshipCalc/Pods-RelationshipCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +82,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18BB1AA2202850BA00BB1758 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18BB1AAD2028538100BB1758 /* HTColor.h */,
+				18BB1AAC2028538100BB1758 /* HTColor.m */,
+				18BB1AA92028530D00BB1758 /* UIView+Extension.h */,
+				18BB1AAA2028530D00BB1758 /* UIView+Extension.m */,
+				18BB1AA6202850C000BB1758 /* UIView+Borders.h */,
+				18BB1AA7202850C000BB1758 /* UIView+Borders.m */,
+				18BB1AA3202850BA00BB1758 /* HTRelationKeyBoard.h */,
+				18BB1AA4202850BA00BB1758 /* HTRelationKeyBoard.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C17C2FF6B8802C93F95B3F00 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +129,7 @@
 		D9802EC2201EED6C000EC5C9 /* RelationshipCalc */ = {
 			isa = PBXGroup;
 			children = (
+				18BB1AA2202850BA00BB1758 /* Views */,
 				D9802EC3201EED6C000EC5C9 /* AppDelegate.h */,
 				D9802EC4201EED6C000EC5C9 /* AppDelegate.m */,
 				D9802EC6201EED6C000EC5C9 /* ViewController.h */,
@@ -298,9 +326,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9802EC8201EED6C000EC5C9 /* ViewController.m in Sources */,
+				18BB1AA5202850BA00BB1758 /* HTRelationKeyBoard.m in Sources */,
+				18BB1AA8202850C000BB1758 /* UIView+Borders.m in Sources */,
+				18BB1AAB2028530D00BB1758 /* UIView+Extension.m in Sources */,
 				D9802ED3201EED6C000EC5C9 /* main.m in Sources */,
 				D9802EC5201EED6C000EC5C9 /* AppDelegate.m in Sources */,
 				D9F41188202734A30064A6F2 /* RCRelationViewModel.m in Sources */,
+				18BB1AAE2028538100BB1758 /* HTColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
