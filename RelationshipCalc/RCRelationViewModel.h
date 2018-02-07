@@ -12,6 +12,8 @@
 
 + (instancetype)sharedInstance;
 
+- (NSString *)computeRelationWithInputString:(NSString *)inputString;
+
 /**
  将输入字符串转换成关系链
  ex:
@@ -28,6 +30,6 @@
  @param relationChain 关系链字符串
  @return 简化后的关系链
  */
-- (NSString *)simplifyRelationChain:(NSString *)relationChain;
+- (NSMutableArray *)simplifyRelationChain:(NSString *)relationChain;
 
 @end

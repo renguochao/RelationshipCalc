@@ -28,6 +28,18 @@
     [super tearDown];
 }
 
+- (void)testComputeRelationWithInputString {
+    NSString *str1 = @"我的哥哥的妈妈的爸爸的儿子";
+    NSString *str2 = @"儿子的妈妈";
+    
+    NSArray *relationArray1 = [self.viewModel computeRelationWithInputString:str1];
+
+    
+    NSArray *relationArray2 = [self.viewModel computeRelationWithInputString:str2];
+
+    
+}
+
 - (void)testTransformInputStringToRelationKey {
     NSString *str1 = @"我的哥哥的妈妈的爸爸的儿子";
     NSString *str2 = @"儿子的妈妈";
@@ -35,6 +47,20 @@
     XCTAssertTrue([[self.viewModel transformInputStringToRelationKey:str1] isEqualToString:@",ob,m,f,s"]);
     XCTAssertTrue([[self.viewModel transformInputStringToRelationKey:str2] isEqualToString:@",s,m"]);
 
+}
+
+- (void)testSimplifyRelationChain {
+    NSString *str1 = @",ob,m,f,s";
+    NSString *str2 = @",s,m";
+    
+    NSArray *simpleArray1 = [self.viewModel simplifyRelationChain:str1];
+    XCTAssertTrue([simpleArray1[0] isEqualToString:@",m,xb"]);
+    
+    NSArray *simpleArray2 = [self.viewModel simplifyRelationChain:str2];
+    XCTAssertTrue([simpleArray2[0] isEqualToString:@",w"]);
+
+    
+    
 }
 
 @end

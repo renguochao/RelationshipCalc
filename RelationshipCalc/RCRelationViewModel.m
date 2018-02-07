@@ -20,6 +20,7 @@
  */
 @property (nonatomic, strong) NSArray<NSDictionary<NSString *, NSString *> *> *arrFilter;
 
+@property (nonatomic, strong) NSMutableSet<NSString *> *hashing;
 
 @end
 
@@ -45,11 +46,104 @@
         NSError *error = nil;
         _dictRcMapping = [NSJSONSerialization JSONObjectWithData:rcMappingData options:NSJSONReadingAllowFragments error:&error];
         _arrFilter = [NSJSONSerialization JSONObjectWithData:filterData options:NSJSONReadingAllowFragments error:&error][@"filter"];
-        
+        _hashing = [[NSMutableSet alloc] init];
     }
     return self;
 }
 
+/**
+ 计算称谓
+
+ @param inputString 输入
+ @return 称谓
+ */
+- (NSString *)computeRelationWithInputString:(NSString *)inputString {
+    NSMutableArray *result = [NSMutableArray array];
+    NSString *relationKey = [self transformInputStringToRelationKey:inputString];
+    
+    NSArray *ids = [self simplifyRelationChain:relationKey];
+    for (NSString *Id in ids) {
+        NSArray *items = [self getDataById:Id];
+        if (items.count > 0) {
+            [result addObjectsFromArray:items];
+        } else if ([Id characterAtIndex:0] == 'w' ||
+                   [Id characterAtIndex:0] == 'h') {
+            items = [self getDataById:[Id substringFromIndex:2]];
+            if (items.count > 0) {
+                [result addObjectsFromArray:items];
+            }
+        }
+    }
+    
+    [self.hashing removeAllObjects];
+    
+    NSString *title = @"";
+    if (result.count == 0) {
+        title = @"关系有点远，再玩就坏了";
+    } else {
+        title = [result componentsJoinedByString:@"/"];
+    }
+    
+    return title;
+}
+
+/**
+ 获取数据
+
+ @param Id 关系链
+ @return 查到的称谓
+ */
+- (NSArray *)getDataById:(NSString *)Id {
+    NSMutableArray *items = [NSMutableArray array];
+    
+    if ([self.dictRcMapping.allKeys containsObject:Id]) {
+        // 直接匹配称呼
+        [items addObject:self.dictRcMapping[Id][0]];
+    } else {
+        items = [self getDataFromDictRcMapping:Id];
+        if (items.count == 0) {
+            // 忽略年龄条件查找
+            Id = [self replaceMatchingStringWithInput:Id regExpString:@"&[ol]" template:@""];
+            items = [self getDataFromDictRcMapping:Id];
+        }
+        if (items.count == 0) {
+            // 忽略年龄条件查找
+            Id = [self replaceMatchingStringWithInput:Id regExpString:@"[ol]" template:@"x"];
+            items = [self getDataFromDictRcMapping:Id];
+        }
+        if (items.count == 0) {
+            // 缩小访问查找
+            NSString *l = [self replaceMatchingStringWithInput:Id regExpString:@"x" template:@"l"];
+            items = [self getDataFromDictRcMapping:l];
+            NSString *o = [self replaceMatchingStringWithInput:Id regExpString:@"x" template:@"o"];
+            [items addObjectsFromArray:[self getDataFromDictRcMapping:o]];
+        }
+    }
+    
+    return items;
+}
+
+- (NSMutableArray *)getDataFromDictRcMapping:(NSString *)Id {
+    NSMutableArray *result = [NSMutableArray array];
+    
+    // 忽略属性
+    NSString *filterExp = @"&[olx]";
+    [self.dictRcMapping enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSArray<NSString *> * _Nonnull obj, BOOL * _Nonnull stop) {
+        NSString *filteredKey = [self replaceMatchingStringWithInput:key regExpString:filterExp template:@""];
+        if ([filteredKey isEqualToString:Id]) {
+            [result addObject:self.dictRcMapping[key][0]];
+        }
+    }];
+    
+    return result;
+}
+
+/**
+ 分词解析
+
+ @param inputString 输入
+ @return 分词后的结果
+ */
 - (NSString *)transformInputStringToRelationKey:(NSString *)inputString {
     __block NSString *result = @"";
     
@@ -75,13 +169,77 @@
     return result;
 }
 
-- (NSString *)simplifyRelationChain:(NSString *)relationChain {
+/**
+ 简化选择器
+
+ @param relationChain 输入
+ @return 简化后的字符串
+ */
+- (NSMutableArray *)simplifyRelationChain:(NSString *)relationChain {
+    NSMutableArray *result = [NSMutableArray new];
     
+    if (![self.hashing containsObject:relationChain]) {
+        [self.hashing addObject:relationChain];
+        
+        if (relationChain.length == 0) {
+            [result addObject:relationChain];
+        } else {
+            BOOL status = YES;
+            NSString *tmp = nil;
+            do {
+                tmp = relationChain;
+                for (NSDictionary<NSString *, NSString *> *filter in self.arrFilter) {
+                    NSString *exp = filter[@"exp"];
+                    NSString *str = filter[@"str"];
+                    
+                    relationChain = [self replaceMatchingStringWithInput:relationChain regExpString:exp template:str];
+                    NSLog(@"exp:%@ - relationChain: %@", exp, relationChain);
+                    
+                    if ([relationChain containsString:@"#"]) {
+                        NSArray *arr = [relationChain componentsSeparatedByString:@"#"];
+                        for (NSString *j in arr) {
+                            [result addObjectsFromArray:[self simplifyRelationChain:j]];
+                        }
+                        status = NO;
+                        break;
+                    }
+                }
+            } while (![tmp isEqualToString:relationChain]);
+            
+            if (status) {
+                tmp = [self replaceMatchingStringWithInput:tmp regExpString:@",[01]" template:@""];
+                if ([tmp length] > 0 && [tmp characterAtIndex:0] == ',') {
+                    tmp = [tmp substringFromIndex:1];
+                }
+                [result addObject:tmp];
+            }
+            
+        }
+    }
     
-    return nil;
+    return result;
 }
 
+/**
+ 正则表达式替换
 
+ @param inputString 输入
+ @param regExpString 正则表达式
+ @param template 替换文本
+ @return 替换后的字符串
+ */
+- (NSString *)replaceMatchingStringWithInput:(NSString *)inputString
+                                regExpString:(NSString *)regExpString
+                                    template:(NSString *)template {
+    NSRegularExpression *regExp = [[NSRegularExpression alloc] initWithPattern:regExpString
+                                                                       options:NSRegularExpressionCaseInsensitive
+                                                                         error:nil];
+    NSString *result = [regExp stringByReplacingMatchesInString:inputString
+                                                 options:NSMatchingReportProgress
+                                                   range:NSMakeRange(0, inputString.length)
+                                            withTemplate:template];
+    return result;
+}
 
 
 

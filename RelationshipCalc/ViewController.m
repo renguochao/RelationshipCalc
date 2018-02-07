@@ -121,9 +121,10 @@
         {
             self.relationLab.text = [NSString stringWithFormat:@"%@的%@",self.relationLab.text,relationStr];
 
-            //TODO: 计算关系
-            [self.viewModel transformInputStringToRelationKey:self.relationLab.text];
-            self.resultLab.text = [NSString stringWithFormat:@"%@的%@",self.resultLab.text,relationStr];
+            // 计算关系
+            NSString *result = [self.viewModel computeRelationWithInputString:self.relationLab.text];
+
+            self.resultLab.text = result;
             [self.relationKeyBoard setRelationBtnEnabled:YES];
         }
             break;
@@ -135,8 +136,11 @@
             }
             NSString *lastRelation = [relationArray lastObject];
             self.relationLab.text = [self.relationLab.text substringWithRange:NSMakeRange(0,self.relationLab.text.length - lastRelation.length - 1)];
-            //TODO: 计算关系
-            self.resultLab.text = [NSString stringWithFormat:@"%@的",self.resultLab.text];
+            
+            // 计算关系
+            NSString *result = [self.viewModel computeRelationWithInputString:self.relationLab.text];
+            
+            self.resultLab.text = result;
             [self.relationKeyBoard setRelationBtnEnabled:YES];
         }
             break;
