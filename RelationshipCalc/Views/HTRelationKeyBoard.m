@@ -32,7 +32,7 @@
                 [btn setTitleColor:[HTColor redColor] forState:UIControlStateNormal];
             } else if (i == 12) {
                 btn.titleLabel.font = [UIFont systemFontOfSize:22];
-                [btn setBackgroundColor:[HTColor colorWithHex:0xF8773B]];
+                [btn setBackgroundColor:[HTColor colorWithHex:0xEB7015]];
                 btn.titleLabel.font = [UIFont systemFontOfSize:40];
                 [btn setTitle:@"=" forState:UIControlStateNormal];
                 btn.frame = CGRectMake(0 , 3 *  btnH , self.width, btnH);
@@ -43,8 +43,6 @@
                 [btn setTitleColor:[HTColor colorWithHex:0xADAFB3] forState:UIControlStateDisabled];
             }
 
-//            [btn.layer setBorderWidth:1.0];
-//            btn.layer.borderColor = [UIColor lightGrayColor].CGColor;
             [btn addTarget:self action:@selector(onButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
             if (i != 12) {
                 btn.frame = CGRectMake((i % 4 ) * btnW , (i / 4 ) *  btnH , btnW, btnH);
