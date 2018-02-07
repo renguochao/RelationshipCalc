@@ -12,6 +12,7 @@
 		18BB1AAB2028530D00BB1758 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB1AAA2028530D00BB1758 /* UIView+Extension.m */; };
 		18BB1AAE2028538100BB1758 /* HTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB1AAC2028538100BB1758 /* HTColor.m */; };
 		A48AA30FAC65C6349842FF54 /* libPods-RelationshipCalc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DFE5B8C3AB32EDB786F3C3 /* libPods-RelationshipCalc.a */; };
+		D94ACFB9202A95500088D58D /* RCLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D94ACFB8202A95500088D58D /* RCLogManager.m */; };
 		D9802EC5201EED6C000EC5C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9802EC4201EED6C000EC5C9 /* AppDelegate.m */; };
 		D9802EC8201EED6C000EC5C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9802EC7201EED6C000EC5C9 /* ViewController.m */; };
 		D9802ECD201EED6C000EC5C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9802ECC201EED6C000EC5C9 /* Assets.xcassets */; };
@@ -45,6 +46,9 @@
 		20DFE5B8C3AB32EDB786F3C3 /* libPods-RelationshipCalc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RelationshipCalc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		440C1417C089A4F42A4464B9 /* Pods-RelationshipCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelationshipCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelationshipCalc/Pods-RelationshipCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		D91AD8D7DFE1CDB7947CAF84 /* Pods-RelationshipCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelationshipCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-RelationshipCalc/Pods-RelationshipCalc.release.xcconfig"; sourceTree = "<group>"; };
+		D94ACFB7202A95500088D58D /* RCLogManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCLogManager.h; sourceTree = "<group>"; };
+		D94ACFB8202A95500088D58D /* RCLogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCLogManager.m; sourceTree = "<group>"; };
+		D94ACFBA202A98190088D58D /* RelationshipCalc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RelationshipCalc-Prefix.pch"; sourceTree = "<group>"; };
 		D9802EC0201EED6C000EC5C9 /* RelationshipCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelationshipCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9802EC3201EED6C000EC5C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D9802EC4201EED6C000EC5C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -106,6 +110,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D94ACFB4202A94D80088D58D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D9802EC6201EED6C000EC5C9 /* ViewController.h */,
+				D9802EC7201EED6C000EC5C9 /* ViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D94ACFB5202A94FA0088D58D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D9F41186202734A30064A6F2 /* RCRelationViewModel.h */,
+				D9F41187202734A30064A6F2 /* RCRelationViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D94ACFB6202A95190088D58D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D94ACFB7202A95500088D58D /* RCLogManager.h */,
+				D94ACFB8202A95500088D58D /* RCLogManager.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D9802EB7201EED6C000EC5C9 = {
 			isa = PBXGroup;
 			children = (
@@ -130,12 +161,11 @@
 			isa = PBXGroup;
 			children = (
 				18BB1AA2202850BA00BB1758 /* Views */,
+				D94ACFB4202A94D80088D58D /* ViewController */,
+				D94ACFB5202A94FA0088D58D /* ViewModel */,
+				D94ACFB6202A95190088D58D /* Utils */,
 				D9802EC3201EED6C000EC5C9 /* AppDelegate.h */,
 				D9802EC4201EED6C000EC5C9 /* AppDelegate.m */,
-				D9802EC6201EED6C000EC5C9 /* ViewController.h */,
-				D9802EC7201EED6C000EC5C9 /* ViewController.m */,
-				D9F41186202734A30064A6F2 /* RCRelationViewModel.h */,
-				D9F41187202734A30064A6F2 /* RCRelationViewModel.m */,
 				D9802ED1201EED6C000EC5C9 /* Info.plist */,
 				D9F4118D202735040064A6F2 /* Resources */,
 			);
@@ -150,6 +180,7 @@
 				D9802ECC201EED6C000EC5C9 /* Assets.xcassets */,
 				D9802ECE201EED6C000EC5C9 /* LaunchScreen.storyboard */,
 				D9802ED2201EED6C000EC5C9 /* main.m */,
+				D94ACFBA202A98190088D58D /* RelationshipCalc-Prefix.pch */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -325,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D94ACFB9202A95500088D58D /* RCLogManager.m in Sources */,
 				D9802EC8201EED6C000EC5C9 /* ViewController.m in Sources */,
 				18BB1AA5202850BA00BB1758 /* HTRelationKeyBoard.m in Sources */,
 				18BB1AA8202850C000BB1758 /* UIView+Borders.m in Sources */,
@@ -477,6 +509,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S86SE89PY;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RelationshipCalc/Resources/RelationshipCalc-Prefix.pch";
 				INFOPLIST_FILE = RelationshipCalc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.kuaisave.RelationshipCalc;
@@ -492,6 +526,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S86SE89PY;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RelationshipCalc/Resources/RelationshipCalc-Prefix.pch";
 				INFOPLIST_FILE = RelationshipCalc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.kuaisave.RelationshipCalc;

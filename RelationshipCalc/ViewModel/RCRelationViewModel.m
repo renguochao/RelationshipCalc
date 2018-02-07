@@ -7,6 +7,7 @@
 //
 
 #import "RCRelationViewModel.h"
+#import "RCLogManager.h"
 
 @interface RCRelationViewModel ()
 
@@ -193,7 +194,7 @@
                     NSString *str = filter[@"str"];
                     
                     relationChain = [self replaceMatchingStringWithInput:relationChain regExpString:exp template:str];
-                    NSLog(@"exp:%@ - relationChain: %@", exp, relationChain);
+                    DDLogDebug(@"exp:%@ - relationChain: %@", exp, relationChain);
                     
                     if ([relationChain containsString:@"#"]) {
                         NSArray *arr = [relationChain componentsSeparatedByString:@"#"];

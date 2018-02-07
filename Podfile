@@ -7,4 +7,5 @@ target 'RelationshipCalc' do
 
   # Pods for RelationshipCalc
   pod 'Masonry', '~> 1.1.0'
+  pod 'CocoaLumberjack'
 end

@@ -1,12 +1,20 @@
 PODS:
+  - CocoaLumberjack (3.3.0):
+    - CocoaLumberjack/Default (= 3.3.0)
+    - CocoaLumberjack/Extensions (= 3.3.0)
+  - CocoaLumberjack/Default (3.3.0)
+  - CocoaLumberjack/Extensions (3.3.0):
+    - CocoaLumberjack/Default
   - Masonry (1.1.0)
 
 DEPENDENCIES:
+  - CocoaLumberjack
   - Masonry (~> 1.1.0)
 
 SPEC CHECKSUMS:
+  CocoaLumberjack: 3c8c74683302f9012bb168e1c4b7ae3c0b558431
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: c8b548983c8be768c0b5d60963613cd0146bcab7
+PODFILE CHECKSUM: f564bcae64982a587790180cd87ca15b0ee662d5
 
 COCOAPODS: 1.1.1
