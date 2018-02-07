@@ -512,6 +512,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/RelationshipCalc/Resources/RelationshipCalc-Prefix.pch";
 				INFOPLIST_FILE = RelationshipCalc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.kuaisave.RelationshipCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -529,6 +530,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/RelationshipCalc/Resources/RelationshipCalc-Prefix.pch";
 				INFOPLIST_FILE = RelationshipCalc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.kuaisave.RelationshipCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
