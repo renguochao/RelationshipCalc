@@ -32,12 +32,11 @@
     NSString *str1 = @"我的哥哥的妈妈的爸爸的儿子";
     NSString *str2 = @"儿子的妈妈";
     
-    NSArray *relationArray1 = [self.viewModel computeRelationWithInputString:str1];
-
+    NSString *result1 = [self.viewModel computeRelationWithInputString:str1];
+    XCTAssertTrue([result1 isEqualToString:@"舅舅"]);
     
-    NSArray *relationArray2 = [self.viewModel computeRelationWithInputString:str2];
-
-    
+    NSString *result2 = [self.viewModel computeRelationWithInputString:str2];
+    XCTAssertTrue([result2 isEqualToString:@"老婆"]);
 }
 
 - (void)testTransformInputStringToRelationKey {
@@ -54,13 +53,10 @@
     NSString *str2 = @",s,m";
     
     NSArray *simpleArray1 = [self.viewModel simplifyRelationChain:str1];
-    XCTAssertTrue([simpleArray1[0] isEqualToString:@",m,xb"]);
+    XCTAssertTrue([simpleArray1[0] isEqualToString:@"m,xb"]);
     
     NSArray *simpleArray2 = [self.viewModel simplifyRelationChain:str2];
-    XCTAssertTrue([simpleArray2[0] isEqualToString:@",w"]);
-
-    
-    
+    XCTAssertTrue([simpleArray2[0] isEqualToString:@"w"]);
 }
 
 @end
