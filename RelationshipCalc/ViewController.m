@@ -34,7 +34,7 @@
 }
 
 - (void)setupUI {
-    self.navigationController.title = @"df";
+    CGFloat statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.text = @"亲戚称呼计算";
     titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -44,7 +44,7 @@
     
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(@0);
-        make.top.equalTo(@30 );
+        make.top.equalTo(@(statusHeight + 10));
     }];
     
     
