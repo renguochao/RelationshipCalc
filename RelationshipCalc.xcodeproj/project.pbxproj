@@ -12,6 +12,8 @@
 		18BB1AAB2028530D00BB1758 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB1AAA2028530D00BB1758 /* UIView+Extension.m */; };
 		18BB1AAE2028538100BB1758 /* HTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB1AAC2028538100BB1758 /* HTColor.m */; };
 		A48AA30FAC65C6349842FF54 /* libPods-RelationshipCalc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DFE5B8C3AB32EDB786F3C3 /* libPods-RelationshipCalc.a */; };
+		D91CF58C202AC9D200C009AD /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D91CF58A202AC9D200C009AD /* JPEngine.m */; };
+		D91CF58D202AC9D200C009AD /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = D91CF58B202AC9D200C009AD /* JSPatch.js */; };
 		D94ACFB9202A95500088D58D /* RCLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D94ACFB8202A95500088D58D /* RCLogManager.m */; };
 		D9802EC5201EED6C000EC5C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9802EC4201EED6C000EC5C9 /* AppDelegate.m */; };
 		D9802EC8201EED6C000EC5C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9802EC7201EED6C000EC5C9 /* ViewController.m */; };
@@ -46,6 +48,10 @@
 		20DFE5B8C3AB32EDB786F3C3 /* libPods-RelationshipCalc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RelationshipCalc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		440C1417C089A4F42A4464B9 /* Pods-RelationshipCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelationshipCalc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelationshipCalc/Pods-RelationshipCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		D91AD8D7DFE1CDB7947CAF84 /* Pods-RelationshipCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelationshipCalc.release.xcconfig"; path = "Pods/Target Support Files/Pods-RelationshipCalc/Pods-RelationshipCalc.release.xcconfig"; sourceTree = "<group>"; };
+		D91CF587202AC99400C009AD /* RCConfuse_pch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCConfuse_pch.h; sourceTree = "<group>"; };
+		D91CF589202AC9D200C009AD /* JPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPEngine.h; sourceTree = "<group>"; };
+		D91CF58A202AC9D200C009AD /* JPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPEngine.m; sourceTree = "<group>"; };
+		D91CF58B202AC9D200C009AD /* JSPatch.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSPatch.js; sourceTree = "<group>"; };
 		D94ACFB7202A95500088D58D /* RCLogManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCLogManager.h; sourceTree = "<group>"; };
 		D94ACFB8202A95500088D58D /* RCLogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCLogManager.m; sourceTree = "<group>"; };
 		D94ACFBA202A98190088D58D /* RelationshipCalc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RelationshipCalc-Prefix.pch"; sourceTree = "<group>"; };
@@ -110,6 +116,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D91CF588202AC9D200C009AD /* JSPatch */ = {
+			isa = PBXGroup;
+			children = (
+				D91CF589202AC9D200C009AD /* JPEngine.h */,
+				D91CF58A202AC9D200C009AD /* JPEngine.m */,
+				D91CF58B202AC9D200C009AD /* JSPatch.js */,
+			);
+			path = JSPatch;
+			sourceTree = "<group>";
+		};
 		D94ACFB4202A94D80088D58D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +147,8 @@
 		D94ACFB6202A95190088D58D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D91CF588202AC9D200C009AD /* JSPatch */,
+				D91CF587202AC99400C009AD /* RCConfuse_pch.h */,
 				D94ACFB7202A95500088D58D /* RCLogManager.h */,
 				D94ACFB8202A95500088D58D /* RCLogManager.m */,
 			);
@@ -288,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9802ED0201EED6C000EC5C9 /* LaunchScreen.storyboard in Resources */,
+				D91CF58D202AC9D200C009AD /* JSPatch.js in Resources */,
 				D9F4118B202734F60064A6F2 /* filter.json in Resources */,
 				D9802ECD201EED6C000EC5C9 /* Assets.xcassets in Resources */,
 				D9F4118C202734F60064A6F2 /* data.json in Resources */,
@@ -357,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D94ACFB9202A95500088D58D /* RCLogManager.m in Sources */,
+				D91CF58C202AC9D200C009AD /* JPEngine.m in Sources */,
 				D9802EC8201EED6C000EC5C9 /* ViewController.m in Sources */,
 				18BB1AA5202850BA00BB1758 /* HTRelationKeyBoard.m in Sources */,
 				18BB1AA8202850C000BB1758 /* UIView+Borders.m in Sources */,
