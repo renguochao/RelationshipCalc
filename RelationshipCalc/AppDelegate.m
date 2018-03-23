@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import <wax/wax.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,30 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+
+    
+    wax_start(nil, nil);//must start
+    extern void luaopen_mobdebug_scripts(void* L);
+    void * p = wax_currentLuaState();
+    luaopen_mobdebug_scripts(p);
+    
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"relationShipExample" ofType:@"lua"];
+    int i = wax_runLuaFile(path.UTF8String);
+    if(i){
+        NSLog(@"error=%s", lua_tostring(wax_currentLuaState(), -1));
+    }
+    
+    
+//    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"http://p60ruufsr.bkt.clouddn.com/OrangeController.lua"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        if (error || !data) {
+//            return;
+//        }
+//
+//    }];
+//    [dataTask resume];
+    
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [ViewController new];//[[UINavigationController alloc] initWithRootViewController:[ViewController new]];

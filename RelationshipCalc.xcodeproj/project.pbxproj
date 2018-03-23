@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		189B56112063D936001F258E /* relationShipExample.lua in Resources */ = {isa = PBXBuildFile; fileRef = 189B56102063D936001F258E /* relationShipExample.lua */; };
 		18BB1AA5202850BA00BB1758 /* HTRelationKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB1AA4202850BA00BB1758 /* HTRelationKeyBoard.m */; };
 		18BB1AA8202850C000BB1758 /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB1AA7202850C000BB1758 /* UIView+Borders.m */; };
 		18BB1AAB2028530D00BB1758 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB1AAA2028530D00BB1758 /* UIView+Extension.m */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		189B56102063D936001F258E /* relationShipExample.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = relationShipExample.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
 		18BB1AA3202850BA00BB1758 /* HTRelationKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTRelationKeyBoard.h; sourceTree = "<group>"; };
 		18BB1AA4202850BA00BB1758 /* HTRelationKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTRelationKeyBoard.m; sourceTree = "<group>"; };
 		18BB1AA6202850C000BB1758 /* UIView+Borders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Borders.h"; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		189B560D2063D871001F258E /* luaScripts */ = {
+			isa = PBXGroup;
+			children = (
+				189B56102063D936001F258E /* relationShipExample.lua */,
+			);
+			path = luaScripts;
+			sourceTree = "<group>";
+		};
 		18BB1AA2202850BA00BB1758 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +188,7 @@
 		D9802EC2201EED6C000EC5C9 /* RelationshipCalc */ = {
 			isa = PBXGroup;
 			children = (
+				189B560D2063D871001F258E /* luaScripts */,
 				18BB1AA2202850BA00BB1758 /* Views */,
 				D94ACFB4202A94D80088D58D /* ViewController */,
 				D94ACFB5202A94FA0088D58D /* ViewModel */,
@@ -306,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9802ED0201EED6C000EC5C9 /* LaunchScreen.storyboard in Resources */,
+				189B56112063D936001F258E /* relationShipExample.lua in Resources */,
 				D91CF58D202AC9D200C009AD /* JSPatch.js in Resources */,
 				D9F4118B202734F60064A6F2 /* filter.json in Resources */,
 				D9802ECD201EED6C000EC5C9 /* Assets.xcassets in Resources */,

@@ -28,11 +28,15 @@
     [super viewDidLoad];
     self.viewModel = [RCRelationViewModel sharedInstance];
     [self setupUI];
-    self.view.backgroundColor = [HTColor colorWithHex:0xEEF0EF];
-
+    [self setTestColor];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+    - (void)setTestColor {
+        self.view.backgroundColor = [HTColor blueColor];
+
+    }
+    
 - (void)setupUI {
     CGFloat statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     UILabel *titleLabel = [[UILabel alloc] init];

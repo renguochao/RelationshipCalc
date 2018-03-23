@@ -8,4 +8,6 @@ target 'RelationshipCalc' do
   # Pods for RelationshipCalc
   pod 'Masonry', '~> 1.1.0'
   pod 'CocoaLumberjack'
+  pod 'wax', '~> 1.2.1'
+  pod 'mobdebug', :git  => 'https://github.com/philonpang/mobdebug.git'
 end

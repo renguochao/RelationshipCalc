@@ -6,15 +6,30 @@ PODS:
   - CocoaLumberjack/Extensions (3.3.0):
     - CocoaLumberjack/Default
   - Masonry (1.1.0)
+  - mobdebug (1.0.0)
+  - wax (1.2.1)
 
 DEPENDENCIES:
   - CocoaLumberjack
   - Masonry (~> 1.1.0)
+  - mobdebug (from `https://github.com/philonpang/mobdebug.git`)
+  - wax (~> 1.2.1)
+
+EXTERNAL SOURCES:
+  mobdebug:
+    :git: https://github.com/philonpang/mobdebug.git
+
+CHECKOUT OPTIONS:
+  mobdebug:
+    :commit: 48b3c5c29b222e902c58ed42060f45d8bc817ba4
+    :git: https://github.com/philonpang/mobdebug.git
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 3c8c74683302f9012bb168e1c4b7ae3c0b558431
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  mobdebug: 247a5717bc61f9ae402c3630421c3eed302b8328
+  wax: 85f4b93dbbfa123ee592c458a0ce289d561e4704
 
-PODFILE CHECKSUM: 838d911f0d80967fbaeb1cd129b0c59e6810ddae
+PODFILE CHECKSUM: dc26a1d7ce74ab4dad13843f7dd1bd16d05a2994
 
 COCOAPODS: 1.1.1
